@@ -13,7 +13,9 @@
         files.exclude("node_modules");
 
         var passed = lint.validateFileList(files.toArray(), nodeLintOptions(), {});
-        if(!passed) fail("Linting failed!");
+        if(!passed) {
+            fail("Linting failed!");
+        }
     });
 
     desc("Integration");
