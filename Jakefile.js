@@ -10,8 +10,6 @@
         var files = new jake.FileList();
         files.include("**/*.js");
         files.exclude("node_modules");
-        files.exclude("build");
-        var options = nodeLintOptions();
         lint.validateFileList(files.toArray(), nodeLintOptions(), {});
     });
     function nodeLintOptions() {
