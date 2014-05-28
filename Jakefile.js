@@ -3,7 +3,7 @@
     "use strict";
 
     desc("Build and test");
-    task("default", ["lint"]);
+    task("default", ["lint", "test"]);
 
     desc("Lint everything");
     task("lint", [], function () {
@@ -16,6 +16,12 @@
         if(!passed) {
             fail("Linting failed!");
         }
+    });
+
+    desc("Test everything");
+    task("test", [], function () {
+        var reporter = require("nodeunit").reporters["default"];
+        reporter.run(['src']);
     });
 
     desc("Integration");
