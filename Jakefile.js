@@ -20,8 +20,8 @@
 
     desc("Test everything");
     task("test", [], function () {
-        var reporter = require("nodeunit").reporters.minimal;
-        reporter.run(['src']);
+        var reporter = require("nodeunit").reporters["default"];
+        reporter.run(['src/_server_test.js']);
     });
 
     desc("Integration");
